@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>
+    Estimate # {{ order }}
+</title>
+{% endblock %}
+
+{% block content %}
+    <center>
+        <br>
+        <br>
+    <h1>You have successfully created an estimate # {{ order }}</h1><br><br>
+    <a style="color: #0000FF;" href="{% url 'account' %}" class="nav-link active">Check your estimates here</a>
+        </center>
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

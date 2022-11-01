@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Account</title>
+{% endblock %}
+
+{% block content %}
+<div class="row" style="background-color: #FFFACD; outline: 2px solid #ff8c00; border-radius: 100px;">
+    <div class="d-flex align-items-center" style="width:25%; padding: 15px;"><pre>   </pre>
+        <img src="/media/user.webp" width="60" alt=""><div style="line-height:18px;">
+            <span style="color:#5B6480;">{{ user }}</span></div></div><div style="width:25%;"><span style="color:#5B6480;"><br>
+    <a href="{% url 'logout' %}" class="btn btn-outline-danger">Logout</a></span></div><div style="width:25%;">
+    <span style="color:#5B6480;"><br><a href="{% url 'payment' %}" class="btn btn-outline-success">Payment page</a>
+    </span></div><div class="chance" style="width:25%;">
+    <div style="color:#5B6480;"><span><br>Tariff: {{ tariff }}</span></div></div></div><br>
+<center>
+    <h1>Estimates</h1><br>
+    {% if queryset %}
+        {% for item in queryset %}
+        <div class="row" style="background-color: #E0FFFF; outline: 2px solid #ff8c00; border-radius: 100px;"><div class="d-flex align-items-center" style="width:25%;"><img src="/media/confirmation-order-1.png" width="100" alt=""><div style="line-height:18px;"><span style="color:#5B6480;">Estimate</span><br><span style="font-size:15px; color:#5B6480;"># {{item.number}}</span></div></div> <div class="chance" style="width:25%;"><div style="color:#5B6480;"><span><br>status: {{item.status}}</span></div></div> <div style="width:25%;"><span style="color:#5B6480;"><br>download image predict</span></div> <div style="width:25%;"><span style="color:#5B6480;"><br>download excel sheet</span></div></div><br>
+        {% endfor %}
+    {% else %}
+        <h4>No estimates done yet - please refer to Estimate page</h4><br>
+    {% endif %}
+</center>
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

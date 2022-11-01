@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>
+    Estimate
+</title>
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <center>
+    <h1>Start your estimate now</h1>
+    <hr>
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input class="btn btn-outline-secondary btn-sm" type="submit" value="upload your files"><br><br>
+        </form>
+        <br>
+        {% for item in queryset %}
+            <h5 class="card-title">FILE - {{ item.pdf }}</h5>
+            <a href="{% url 'delete_item' item.id %}" class="btn btn-outline-danger btn-sm">Delete</a><br>
+        {% endfor %}
+        {% if queryset %}
+            <br><a href="{% url 'create_order' order_number %}" class="btn btn-outline-success">Start your estimate</a>
+        <br><br>
+        {% else %}
+        {% endif %}
+{% else %}
+        <h1>Log in pls</h1>
+{% endif %}
+        </center>
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

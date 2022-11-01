@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>
+    Estimate
+</title>
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <center>
+    <h1>Pay for accept</h1>
+    <hr>
+
+{% else %}
+        <h1>Log in pls</h1>
+{% endif %}
+        </center>
+{% endblock %}
+{% block footer %}
+{% include 'footer1.html' %}
+{% endblock %}

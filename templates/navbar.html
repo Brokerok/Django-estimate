@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #ff8c00;">
+   <div class="container-fluid">
+       <form class="d-flex">
+    <img src="/media/logo.jpg" class="navbar-brand" width="40">
+        <img src="/media/logo2.jpg" class="navbar-brand" width="50">
+           </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+          {% if user.is_authenticated %}
+                <a href="{% url 'estimate' %}" class="btn btn-outline-success">Estimate</a><pre> </pre>
+                <a href="{% url 'account' %}" class="btn btn-outline-success">Account</a>
+          {% else %}
+                <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a><pre> </pre>
+                <a href="{% url 'register' %}" class="btn btn-outline-success">Register</a>
+          {% endif %}
+      </form>
+    </div>
+  </div>
+</nav>

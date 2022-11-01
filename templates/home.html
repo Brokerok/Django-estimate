@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>
+    Home
+</title>
+{% endblock %}
+
+{% block content %}
+<pre><font size="20" face="FF mark" style="font-size:5vw;">    Construction Estimates Software</font></pre>
+<section class="ant-section__ant047_text">
+            <div class="container">
+                <div class="row justify-content-center mb-30-none">
+                    <div class="col-lg-6">
+                        <div class="service-content mt-60 mb-30" data-editable="" data-name="article">
+                            <h3 class="title"><font color="grey" face="trial">First Fully Automated Estimate Service</font></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-thumb mb-30">
+                            <img data-fixture="" data-ce-tag="img-fixture" src="/media/img1.jpg" width="500" alt="about image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-content mt-60 mb-30" data-editable="" data-name="article">
+                            <h3 class="title"><font color="grey" face="trial">Who we are ?</font></h3>
+                            <p><font color="grey" face="trial">We are team of developers and estimators providing construction estimating software.</font></p>
+                            <p><font color="grey" face="trial">Machine learning developers providing computer vision and AI systems to take off exact measurements, schedule of works and comparing cost databases.
+Estimating team are double checking final result to ensure high quality estimate.</font></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-thumb mb-30">
+                            <img data-fixture="" data-ce-tag="img-fixture" src="/media/img2.jpg" width="500" alt="about image">
+                            <br><br><br>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-thumb mb-30">
+                            <img data-fixture="" data-ce-tag="img-fixture" src="/media/img3.jpg" width="450" alt="about image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-content mt-60 mb-30" data-editable="" data-name="article">
+                          <br><br>
+                            <h3 class="title"><font color="grey" face="trial">Estimating service</font></h3>
+                            <p><font color="grey" face="trial">We are able to provide estimate for any type of works: back to  brick refurbishment, extensions, loft & pod conversions and basements for detached and semi-detached houses
+As all estimates done by AI system, you will be able to get your estimation for one hour.</font></p>
+                            <h5 class="title"><font color="grey" face="trial">Services:</font></h5>
+                            <p><font color="grey" face="trial">Standart Estimate - All works and costs provided by AI. You will be able to receive your estimate for next one hour. If there are a few exceptions on workschedule which software can`t recongise - exclude list of this few items will be created at the end of quotation
+Human check option - All work and cost to be check by Human. In this case, you will be able to receive your estimating next working day.
+Bespoke enquiries & price database - If you are contactor providing installation on specific construction works only or would like to access price database for any changes / specific company margin rates - please contact us to discuss more detail on your enquiry.</font></p>
+                        </div>
+                    </div>
+                </div><br><br>
+            </div>
+        </section>
+<pre><font style="font-size:5vw;" size="10" face="FF mark">    Example of estimates process</font></pre>
+<pre><font style="font-size:2vw;" size="5" face="FF mark">         Along with excel sheet SoW, you will receive measurement labeled files for quick visual self-checking.</font></pre>
+<section class="ant-section__ant047_text">
+<div class="container">
+    <div class="row justify-content-center mb-30-none">
+     <div class="col-lg-6">
+                        <div class="service-thumb mb-30">
+                            <img data-fixture="" data-ce-tag="img-fixture" src="/media/img5.png" width="500" alt="about image">
+                        </div>
+                    </div>
+    <div class="col-lg-6">
+                        <div class="service-thumb mb-30">
+                            <img data-fixture="" data-ce-tag="img-fixture" src="/media/img6.png" width="500" alt="about image">
+                        </div>
+                    </div>
+    </div><br><br>
+    </div>
+    </section>
+{% if not user.is_authenticated %}
+<center>
+<a href="{% url 'register' %}"><h1>Sing up now and get a 3 weeks free trial of service</h1></a><br><br><br>
+    </center>
+{% endif %}
+{% endblock %}
+{% block footer %}
+{% include 'footer1.html' %}
+{% endblock %}
